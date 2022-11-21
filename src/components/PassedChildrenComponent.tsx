@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {JSXElementConstructor} from 'react'
 
-const PassedChildrenComponent: React.FC = () => {
+export type PassedChildrenComponentProps = {
+    SmallBoxArrayComponent: JSXElementConstructor<any>
+    MediumBoxArrayComponent: JSXElementConstructor<any>
+    LargeBoxArrayComponent: JSXElementConstructor<any>
+}
+
+const PassedChildrenComponent: React.FC<PassedChildrenComponentProps> = (props) => {
+    const {SmallBoxArrayComponent, MediumBoxArrayComponent, LargeBoxArrayComponent} = props
     return (
         <div>
-
+            <SmallBoxArrayComponent />
+            <MediumBoxArrayComponent />
+            <LargeBoxArrayComponent />
         </div>
     )
 }
